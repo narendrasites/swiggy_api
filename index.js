@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(cors())
 app.use(express.static("public"));
 
+app.get('/', (req, res) => {
+    return res.status(200).json({ message: "Welcome to the API", success: true })
+})
+
 // Endpoint to get data from category.json
 app.get('/categories', (req, res) => {
     // Path to category.json file
